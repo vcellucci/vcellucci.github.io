@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML" async></script>
+
+    <script src="https://kit.fontawesome.com/3e7beca4d2.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/main.css">
+    <title>Precise Definition of a Limit - Return To Sender</title>
+</head>
+
+<body>
+
+    <div class="container-fluid justify-content-center pt-4">
+        <h1 class="text-center marker-font">Precise Definition of a Limit</h1>
+        <div class="row h-100 mx-auto">
+            <div class="col-lg-12 mx-auto  p-2">
+                <div class="container content shadow rounded py-5 ">
+                    <p class="text-muted ">
+                        If you haven't already read my <a href="limit.html">previous post</a>, I suggest you do that
+                        now, as it lays the foundation for this article.
+                    </p>
+                    <p>
+                        Without further ado, here is the precise definition of a limit, taken from <a
+                            href="https://www.math.ucdavis.edu/~kouba/CalcOneDIRECTORY/preciselimdirectory/PreciseLimit.html">here</a>
+                    <div class="text-center border rounded p-4 shadow m-4 lead" style="background-color: white;">
+                        <p>
+                            The statement \(\lim_{x \to a} f(x) = L \) has the following precise definition. Given any
+                            real number \(\varepsilon > 0\), there exists another real number \(\delta > 0\) so that
+                            $$ if \;0 < |x-a| < \delta, \\ then \; |f(x) - L | < \varepsilon $$ </p>
+
+                    </div>
+                    </p>
+                    <p>
+                        Continuing with our simple linear function \(f(x) = 2x\). We already know how to make \(f(x)\)
+                        within any \(\varepsilon\). We did so by solving
+                        $$ |f(x) - f(a)| < \varepsilon $$ $$ |2x - 2a| < \varepsilon $$ $$ -\varepsilon < 2x - 2a <
+                            \varepsilon $$ $$ -{\varepsilon \over 2 }< x - a < {\varepsilon \over 2 } $$ So as you can
+                            see, \({\varepsilon \over 2 }\) is our \(\delta\) in the above definition. So the definition
+                            is saying, if we make \(x\) as close as possible to \(a\), we can make the output of the
+                            function within \(\varepsilon\) . </p>
+                            <p>
+                                Ok, so let's prove that \(\lim_{x \to 10} f(x) = 20 \) with what we learned so far.
+                            </p>
+                            <p>
+                                I always start by working out the \(\delta\) first, then work backward to link them
+                                together.
+                                $$ |2x - 2a| < \varepsilon $$ $$=2| x - a | < \varepsilon $$ $$=| x - a | < {\varepsilon
+                                    \over 2} $$ Remember that \(|x-a| < \delta\). So, \(\delta={\varepsilon \over 2}\).
+                                    Here is the complete proof. <div class="rounded shadow m-3 p-3"
+                                    style="background-color: white;">
+                                    <p>
+                                        \(\lim_{x \to 10} f(x) = 20 \).
+
+                                    </p>
+                                    <p>
+                                        Using the precise definition; If \(0 < |x-10| < \delta\), then \( |f(x) - 20 | <
+                                            \varepsilon \) </p>
+                                            <p>
+                                                Let \(\varepsilon > 0 \). Choose \(\delta ={ \varepsilon \over 2 } \).
+                                            </p>
+                                            <p>
+                                                Assume that \(0 < |x-10| < \delta\). Observe $$ \begin{align} |f(x) -
+                                                    20| &=|2x-20| \\ &=|2(x-10)| \\ &=2|x-10| \\ & < 2\delta \\ & <
+                                                    2{\varepsilon \over 2} \\ & < \varepsilon \\ |f(x) - 20| &<
+                                                    \varepsilon \end{align} $$ </p>
+                                                    <span style="color: black">
+                                                        <i class="fas fa-smile"></i>
+                                                    </span>
+                                            </p>
+                                            <p>Remember that we chose \(\delta ={ \varepsilon \over 2 } \). That's why
+                                                we can make \(2\delta = 2{ \varepsilon \over 2 }\)</p>
+
+                </div>
+                <p>
+                    Ok, let's try a more complicated example. Let's show that the \(\lim_{x \to 2} f(x) = 4 \), and let
+                    \(f(x) = x^2\). Remember that we try to workout out \(\delta\) so we can use it later. Here \(a =
+                    2\)
+                    $$ |x^2 - a^2| < \varepsilon $$ $$ |x^2 - 4| < \varepsilon $$ Using difference of squares $$ | x - 2
+                        ||x+2| < \varepsilon \\ | x - 2 | < {\varepsilon \over |x+2|} $$ Ok, cool, we have our
+                        \(|x-2|\), but what do we do about the \(|x+2|\)? Well, remember that we want \(\delta\) to be
+                        as small as possible, which makes \(|x-2|\) close to 2. So it's perfectly fine to assume \(|x-2|
+                        < 1\). Why 1? We could have chosen \(1/10\) or 2. But one is usually nice and easy to work with.
+                        So let's assume that \(|x-2| < 1\) and find a \(\delta\) that works. $$ |x-2| < 1 \\ -1 < x-2 <
+                        1 \\ 2-1 < x < 2 + 1 \\ 1 < x < 3 $$ Ok, now let's make it look like \(|x+2|\) by adding 2 $$ 2
+                        + 1 < x + 2 < 3 + 2 \\ 3 < x + 2 < 5 \\ $$ And since everything is positive, we can say $$ 3 < |
+                        x+2 | < 5 $$ Now we're getting close. Remember that when taking a reciprocal in an inequality,
+                        the symbols flip $$ {1 \over 5} < \left| { 1 \over x+2 }\right| < {1 \over 3} \\ (\varepsilon)
+                        {1 \over 5} < \left| (\varepsilon){ 1 \over x+2 }\right| < (\varepsilon){1 \over 3} \\
+                        {\varepsilon \over 5} < \left| {\varepsilon \over x+2 }\right| < {\varepsilon \over 3} \\ $$
+                        There's two choices here for \(\delta\), but remember our goal is to make \(\delta\) as small as
+                        possible. So we chose \(\varepsilon/5\). </p>
+                        <p>
+                            Recall that we worked out \(| x - 2 | < {\varepsilon \over |x+2|}\) and that \(|x+2| < 5\),
+                                so we can say \(| x - 2 | < {\varepsilon \over 5}\). </p>
+                                <p>
+                                    And there we have it, we have just shown that \(|x-2| < {\varepsilon \over 5}\)
+                                        provided that \(|x-2| < 1\). Or, \(|x-2| < \min({\varepsilon \over 5}, 1)\), and
+                                        that \(|x+2|< 5 \). Put another way, we have shown that if \(|x-2| < 1\) then
+                                        \(|x+2| < 5\). </p>
+                                        <p>
+                                            Let's analyze what we did a little further. Keeping in mind that
+                                            $$
+                                            if \; |x-2| < 1, \;then \; 3 < | x+2 | < 5 $$ We have $$ \begin{align} |x^2
+                                                - 4| &=|x-2||x+2| \\ |x^2 - 4|& < |x-2|5 \\ |x^2 - 4|& < 5|x-2|
+                                                \end{align} $$ Note that we showed that \(|x+2| < 5\), provided that
+                                                \(|x-2| < 1\). That means \( |x-2||x+2| < 5|x-2|\). </p>
+                                                <p>
+                                                    Let's test this out by plugging 2.9 into \(|x^2 - 4|\), since
+                                                    \(|2.9-2| < 1\) $$ |2.9^2 - 4|=4.41 $$ plugging the same into $$
+                                                        \begin{align}\\ 5|x-2| &=5|2.9 -2|\\ &=5(0.9)\\ &=4.5\\
+                                                        \end{align} $$ And \(4.41 < 4.5\)! </p>
+
+                                                        <p>
+                                                            Let's work all of this into our proof.
+                                                        </p>
+                                                        <div class="rounded shadow m-3 p-3"
+                                                            style="background-color: white;">
+                                                            <p>
+                                                                Let \(f(x) = x^2\). Then \(\lim_{x \to 2} f(x) = 4 \).
+                                                            </p>
+                                                            <p>
+                                                                Using the precise definition; If \(0 < |x-2| < \delta\),
+                                                                    then \( |f(x) - 4 | < \varepsilon \) </p>
+                                                                    <p>
+                                                                        Let \(\varepsilon > 0 \). Choose \(\delta =
+                                                                        \min({ \varepsilon \over 5 },1) \).
+                                                                    </p>
+                                                                    <p>
+                                                                        Assume that \(0 < |x-2| < \delta\), and \(|x-2|
+                                                                            < 1\), then \(|x+2| < 5\) $$ \begin{align}
+                                                                            \\ |f(x) - 4 | &=|x^2 - 4| \\ &=|x-2||x+2|
+                                                                            \\ & < \delta|x+2| \\ & < \delta(5) \\ & <
+                                                                            5{\varepsilon \over 5 } \\ |f(x) - 4 | & <
+                                                                            \varepsilon \\ \end{align} $$ <i
+                                                                            class="fas fa-smile"></i>
+
+                                                                    </p>
+                                                        </div>
+                                                        <p>
+                                                            Well, I hope this helps someone understand limits. I took an
+                                                            analytical approach. It seems sometimes, I just need to
+                                                            analyze things before I can understand them. Especially in
+                                                            mathematics. Having said all that, <a
+                                                                href="limit-1-over-x.html">next</a> I'll try analyzing
+                                                            \(f(x) = {1 \over x}\).
+
+                                                        </p>
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

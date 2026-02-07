@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML" async></script>
+
+    <script src="https://kit.fontawesome.com/3e7beca4d2.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>What is a Limit? - Return To Sender</title>
+</head>
+
+<body>
+    <div class="container-fluid justify-content-center pt-4">
+        <h1 class="text-center marker-font">What is a Limit?</h1>
+        <div class="row h-100 mx-auto">
+
+            <div class="col-md-8 mx-auto mt-2">
+                <div class="container content shadow-lg rounded p-5">
+                    <p>
+                        What is a limit? In a nutshell, a limit of a function, is how a function behaves at certain
+                        input point. The function may not be defined at that input. But we may want to know how it
+                        behaves around that input point.
+                    </p>
+                    <p>
+                        Let's start with a function. A linear function $$f(x) = 2x$$
+                        Ok, we know that the value of $$f(4) = 8$$
+                        But, let's say I want to be guaranteed the output to the function is within a certain range of
+                        8.
+                        Let's say
+                        \(1/10\) of 8. Or more precisely I want
+                        $$|f(x) - 8| < {1 \over 10}$$ Still with me? Let's solve for x $$ -{1 \over 10} < 2x - 8 < {1
+                            \over 10} $$ $$ 8 - {1 \over 10} < 2x < 8 + {1 \over 10} $$ $$ {79 \over 10} < 2x < {81
+                            \over 10} $$ $$ {79 \over 20} < x < {81 \over 20} $$ Converting to decimals $$ 3.95 < x <
+                            4.05 $$ So what we have here, is a value for \(x\) that will guarantee the value of our
+                            function will be within \(1 \over 10\) of 8. Or put another way, if we input a value greater
+                            than 3.95 and less than 4.05, \(f(x)\) will be within \(1 \over 10\) on either side of the
+                            number line!! </p>
+                            <p>
+                                Let's test this. Let's try \(x = 3.96\). Pumping this into my calculator, I get the
+                                value
+                                7.92. That's definitely within 0.1!
+                            </p>
+                            <p>
+                                Let's try the other side, say \(x = 4.04\). This gives me 8.08. Again! It's within 0.1
+                                of 8!!
+                            </p>
+                            <p>
+                                Now, let's test this with values outside of the interval \((3.95, 4.05)\). With 3.94 and
+                                4.06 I
+                                get 7.88 and 8.12 respectively. Those values are definitely not within 0.1 of 8!
+                            </p>
+                            <p>
+                                Ok, cool. But even more interesting is that we can guarantee the value of \(f(x)\) to be
+                                within
+                                any range, \(\varepsilon\).
+                                $$|2x - 2a| < \varepsilon$$ $$=- \varepsilon < 2x - 2a < \varepsilon$$ $$=- {\varepsilon
+                                    \over 2 } < x - a < {\varepsilon \over 2} $$ Hey! This is starting to look a lot
+                                    like the precise definition of a limit! In fact, what we're saying here, is if we
+                                    want the output to be within \(\varepsilon\) of \(f(x)\), then our input has to be
+                                    within \(\varepsilon / 2\). </p>
+                                    <p>
+                                        Let's use a concrete example.
+                                        We want the output to be within 1 unit of \(f(10)\). This means that our input
+                                        must be within \(|{\varepsilon \over 2}|\), or \(|{1\over2}|\), or more
+                                        precisely,
+                                        the interval \((9.5, 10.5)\), because \(10 - 0.5 = 9.5\) and, \(10 + 0.5 =
+                                        10.5\). If we plug these in, we'll get 19 and 21 respectively. So, if
+                                        we input anything greater than 9.5 and less than 10.5, then we'll get the output
+                                        to our
+                                        function within 1 unit.
+                                    </p>
+                                    <p>
+
+
+                                        Let's try for within \(1/100\) of \(f(10)\)
+                                        $$ {1 \over 100} * {1 \over 2} = {1 \over 200 }$$
+
+                                        Converting to decimal we get 0.005, and plugging those in we get
+                                        $$ 10 - 0.005 = 9.995 $$
+                                        $$ 10 + 0.005 = 10.005 $$
+                                        $$ f(9.995) = 19.99 $$
+                                        $$ f(10.005) = 20.01 $$
+
+                                        We can keep doing this by making \(\varepsilon\) as tiny as we want, the output
+                                        will always be within \(\varepsilon\), in this example, it's 20. And *this* is
+                                        the essence of the precise definition of a limit. We can get \(f(a)\) as close
+                                        as possible to \(f(x)\), by making the input value \(a\) as close as possible to
+                                        the
+                                        input value \(x\).
+                                        All
+                                        this is taking for granted that the limit actually exists!
+
+                                    </p>
+                                    <p><a href="precise-limit.html"> Next</a>, we'll tackle The Precise Definition of a
+                                        Limit...</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

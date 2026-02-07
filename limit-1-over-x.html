@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML" async></script>
+
+    <script src="https://kit.fontawesome.com/3e7beca4d2.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/main.css">
+    <title>Analyzing f(x) = 1/x - Return To Sender</title>
+</head>
+
+<body>
+    <div class="container-fluid justify-content-center p-4">
+        <h1 class="text-center marker-font">Analyzing \(f(x)={1 \over x}\)</h1>
+        <div class="row h-100 mx-auto">
+
+            <div class="col-lg-12 mx-auto  p-2">
+                <div class="container content shadow rounded py-5 ">
+                    <p class="text-muted ">
+                        If you haven't already read my <a href="precise-limit.html">previous post</a>, I suggest you do
+                        that now, as it lays the foundation for this article.
+                    </p>
+
+                    <p>
+                        Recalling the definition of a limit
+                    <div class="text-center border rounded p-4 shadow m-4 lead" style="background-color: white;">
+                        <p>
+                            The statement \(\lim_{x \to a} f(x) = L \) has the following precise definition. Given any
+                            real number \(\varepsilon > 0\), there exists another real number \(\delta > 0\) so that
+                            $$ if \;0 < |x-a| < \delta, \\ then \; |f(x) - L | < \varepsilon $$ </p>
+
+                    </div>
+                    </p>
+                    <p>
+                        Given that \(f(x) = {1 \over x}\), let's prove that \(\lim_{x \to 4} f(x) = {1 \over 4} \).
+                    </p>
+                    <p>
+                        Again, we try to find a good \(\delta\), we can start off with
+                        $$
+                        \begin{align} \\
+                        \left| {1 \over x} - {1 \over 4} \right| &< \varepsilon \\ \left| {4-x} \over {4x} \right| &<
+                            \varepsilon \\ {1 \over 4} \cdot {1 \over x} |4-x| & < \varepsilon \\ {1 \over 4} \cdot {1
+                            \over x} |x-4| & < \varepsilon \\ |x-4| & < 4x \varepsilon \end{align} $$ </p>
+                            <p>
+                                Ok, we have our \(|4-x|\), but, we can't have \(\varepsilon\) dependant on \(x\). Let's
+                                see what we can do about that
+                                \(1/x\) on the left, since we have an opportunity to get rid of it on the right hand
+                                side. Knowing that we want to keep
+                                \(x\) close to \(4\), let's declare the following
+                                $$
+                                \begin{align}
+                                |4-x| < 1 \\ -1 < x < 1 \\ 3 < x < 5 \\ \end{align} $$ Ok, this is looking interesting,
+                                    let's choose the small \(x\), namely \(3\), because, you know, mathematicians aren't
+                                    afraid of thinking small... keeping that in mind let's take the reciprocal of this
+                                    inequality $$ {1 \over 5 } < {1 \over x} < {1 \over 3} $$ And, there we have it, we
+                                    can use \(\delta=12\varepsilon\) provided that \(|x-4| < 1\), or more precisely,
+                                    \(\min(12\varepsilon, 1)\). Why can we say this? <ul>
+                                    <li>The fact that \(1/x > 0\)</li>
+                                    <li>The fact that \(1/4\) is in the interval \(({1\over 5}, {1\over 3})\)</li>
+                                    </1>
+                            </p>
+
+                            <div class="rounded shadow m-3 p-3" style="background-color: white;">
+                                <p>
+                                    Let \(f(x) = {1 \over x }\). Then \(\lim_{x \to 4} f(x) = {1 \over 4} \).
+                                </p>
+                                <p>
+                                    Using the precise definition; If \(0 < |x-4| < \delta\), then \( \left |f(x) - {1
+                                        \over 4} \right| < \varepsilon \) </p>
+                                        <p>
+                                            Let \(\varepsilon > 0\), if \(|x-4| < 1\) then
+                                                \(\delta=\min(12\varepsilon,1)\) and \({1\over x}< {1\over 3}\).
+                                                Therefore we have $$ \begin{align} \left |f(x) - {1 \over 4} \right|
+                                                &=\left |{1 \over x} - {1 \over 4} \right| \\ &=\left| {4-x} \over {4x}
+                                                \right| \\ &={1 \over 4} \cdot {1 \over x} |4-x| \\ &={1 \over 4} \cdot
+                                                {1 \over x} |x-4| \\ &< {1 \over 4} \cdot {1 \over 3} |x-4| \\ &< {1
+                                                \over 4} \cdot {1 \over 3} \delta \\ &< {1 \over 12} \delta \\ &< {1
+                                                \over 12} 12 \varepsilon \\ \left |f(x) - {1 \over 4} \right| &<
+                                                \varepsilon \\ \end{align} $$ <i class="fas fa-smile"></i>
+                                        </p>
+
+                            </div>
+                            <p>
+                                Let's not lose track of our goal here. What we just proved, was that if we satisfy the
+                                conditions provided in the proof, the function will be within a certain \(\varepsilon\)
+                                of \(1/4\). Or, to put it another way, the output will be as close as we want it to
+                                \(1/4\).
+                                You can test these out by plugging some values into \(x\) and see what happens.
+                            </p>
+                            <p>
+                                With a little bit of thought, we can see that is false to say \(\lim_{x \to 0} {1 \over
+                                x} = 0 \). Or put another way, it's not true
+                                that for every \(\varepsilon > 0\), we can find a \(|x-0|\) that makes \(|f(x) - 0| <
+                                    \varepsilon\). There is no \(|f(x)|\ < \varepsilon\)! Or, let's say we want to be
+                                    within \(1/100\) of \(0\). So we have to satisfy \(|x-0| < 1/100\) and \(|f(x) - 0|
+                                    < 1/100\). Observe $$ \begin{align} \text{ Let } x &=1/100\\ |x - 0| &=|1/100 -0| \\
+                                    &=|1/100| \\ \end{align} $$ And we have $$ \begin{align}\\ \left|{1 \over x
+                                    }-0\right| &=\left|{1 \over {1 \over 100}}\right| \\ &=1 \cdot 100=100 \end{align}
+                                    $$ As a matter of fact, the smaller we make \(|x-0|\), the larger \(|f(x)-0|\)
+                                    becomes. We say that \(f(x) \to \infty\), which reads "F of x, approaches infinity."
+                                    And if we think about this for a moment, it makes perfect sense, if we keep in mind
+                                    that $$ {1 \over x }=1 \cdot {x^{-1}} $$ So how do we prove that \(\lim_{x \to 0}
+                                    {1\over x}=\infty \)? Or put another way, how do we prove that the function grows
+                                    without bounds, as the input approaches \(0\)? First, let's, define precisely what
+                                    it means for a limit to approach infinity. <div
+                                    class="text-center border rounded p-4 shadow m-4 lead"
+                                    style="background-color: white;">
+                                    <p>
+                                        \(\lim_{x \to a} f(x) = \infty\) means that for every positive number \(M\)
+                                        there is a positive number \(\delta\) such that
+                                        $$ f(x) > M \text{ whenever } 0 < | x-a| < \delta $$ </p>
+
+                </div>
+                This is basically saying what we just showed previously, but in a more formal way. We can make \(f(x)\)
+                bigger than any number, whenever we make \(x\)
+                close to \(a\), but not \(a\) itself, hence the \(0 <| x-a| < \delta\). </p>
+                    <p>
+                        All right, let's prove it for \(1/x\). First we need to find a \(\delta\) that works. So, we
+                        want \(\delta\), such that \(f(x) > M\)
+                        $$
+                        f(x) > M = {1\over x } > M \text{ whenever } 0< |x-0| < \delta\\ \begin{align}\\ \implies 1 &>
+                            xM \\
+                            \implies x &< {1 \over M} \text { whenever } |x| < \delta \end{align} $$ So now we have
+                                \(\delta={1 \over M}\) <div class="rounded shadow m-3 p-3"
+                                style="background-color: white;">
+                                <p>
+                                    By definition \(\lim_{x \to 0} {1\over x} = \infty\) means that for every positive
+                                    number \(M\) there is a positive number \(\delta\) such that
+                                    \({1\over x} > M \text{ whenever } 0 < | x-0| < \delta\) </p>
+                                        <p>
+                                            Let \(M > 0\), choose \(\delta = {1 \over M}\). If \(0 < | x-0| < \delta \).
+                                                Observe $$ \begin{align} |x| &< \delta \\ x &< \delta\\ {1 \over x} &>
+                                                {1 \over \delta}\\
+                                                {1 \over x} &> {1 \over {1\over M}}\\
+                                                {1 \over x} &> M
+                                                \end{align}
+                                                $$
+
+                                                Thus by definition, \(\lim_{x \to 0} {1\over x} = \infty\)
+
+                                        </p>
+                                        <i class="fas fa-smile"></i>
+
+
+            </div>
+
+            <p>
+                Ok, let's do more testing. Let's use \(\delta = 1/10\), so that means we have to choose a \(|x| <
+                    1/10\). So, let's use \(1/100\). Plugging it into \(1/x\), remembering that \(M=10\) we get $$ {1
+                    \over {1\over 100}}=1 \cdot {100 \over 1}=100> 10
+                    $$
+            </p>
+            <p>
+                I know, it seems like a lot of hand waving. But that's part of mathematics, I like to call it "creative
+                trickery".
+            </p>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
